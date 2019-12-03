@@ -1,0 +1,23 @@
+﻿@model MVC_MiniProject_lastweek.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <h2>@Model.CustomerName</h2>
+    <p>
+       Membership Type:@Html.DisplayFor(model => model.MembershipType.Type)
+    </p>
+    @if (Model.DOB != null)
+    {
+    <p>
+        BirthDate:@Html.DisplayFor(model => model.DOB)
+
+    </p>
+    }
+</div>

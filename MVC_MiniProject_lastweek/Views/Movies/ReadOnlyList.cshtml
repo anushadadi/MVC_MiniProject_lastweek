@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MVC_MiniProject_lastweek.Models.Movie>
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<h2>Movies List</h2>
+
+<br />
+
+@*<button >@Html.ActionLink("New Movie", "CreateMovie", "Movies") </button>*@
+<div><br /></div>
+<table id="movies" class="table">
+    <thead>
+        <tr>
+            <th> Movie Name</th>
+            <th> Genre Type</th>
+            
+        </tr>
+    </thead>
+    <tbody></tbody>
+    </table>
+@section scripts
+ {
+    <script>
+        $(document).ready(function () {
+           var table= $("#movies").DataTable(
+                {
+                    ajax: {
+                        url: "/api/movieDto",
+                        dataSrc:""
+                    },
+                    columns: [
+                        {
+                            data: "movieName",
+                           
+                            
+                        },
+                        {
+                            data: "genre.genreName"
+                        },
+                        
+                    ]
+                });
+           
+        });
+    </script>
+    }
+
+
+
+
+

@@ -1,0 +1,20 @@
+﻿@model MVC_MiniProject_lastweek.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <p>
+        <h2>@Html.DisplayFor(model => model.MovieName)</h2>
+    </p>
+    <p> Genre : @Model.Genre.GenreName</p>
+    <p> Release Date: @Model.ReleaseDate.ToLongDateString()</p>
+    <p> Added Date : @Model.AddedDate.ToLongDateString()</p>
+    <p> Number In Stock : @Model.NumberInStock</p>
+
+</div>
